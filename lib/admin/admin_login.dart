@@ -19,7 +19,7 @@ class _AdminPageState extends State<AdminPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFFededeb),
-      body: Container(
+      body: SingleChildScrollView(
         child: Stack(
           children: [
             Container(
@@ -52,129 +52,144 @@ class _AdminPageState extends State<AdminPage> {
                 right: 30,
                 left: 30,
               ),
-              child: Form(
-                key: _formkey,
-                child: Column(
-                  children: [
-                    const Text(
-                      "Let's start with Admin",
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold),
+              child: Column(
+                children: [
+                  Center(
+                    child: Image.asset(
+                      "images/logo.png",
+                      width: MediaQuery.of(context).size.width / 1.5,
+                      fit: BoxFit.cover,
+                      height: 50,
                     ),
-                    const SizedBox(
-                      height: 30.0,
-                    ),
-                    Material(
-                      elevation: 3.0,
-                      borderRadius: BorderRadius.circular(20),
-                      child: Container(
-                        height: MediaQuery.of(context).size.height / 2.2,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(20),
+                  ),
+                  SizedBox(
+                    height: 30,
+                  ),
+                  Form(
+                    key: _formkey,
+                    child: Column(
+                      children: [
+                        const Text(
+                          "Welcome Back Admin!",
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold),
                         ),
-                        child: Column(
-                          children: [
-                            const SizedBox(
-                              height: 50.0,
+                        const SizedBox(
+                          height: 30.0,
+                        ),
+                        Material(
+                          elevation: 3.0,
+                          borderRadius: BorderRadius.circular(20),
+                          child: Container(
+                            height: MediaQuery.of(context).size.height / 2.2,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(20),
                             ),
-                            Container(
-                              padding:
-                                  const EdgeInsets.only(left: 20, top: 5.0),
-                              margin:
-                                  const EdgeInsets.symmetric(horizontal: 20.0),
-                              decoration: BoxDecoration(
-                                border: Border.all(
-                                  color:
-                                      const Color.fromARGB(255, 160, 160, 147),
+                            child: Column(
+                              children: [
+                                const SizedBox(
+                                  height: 50.0,
                                 ),
-                                borderRadius: BorderRadius.circular(10),
-                              ),
-                              child: Center(
-                                child: TextFormField(
-                                  controller: userNameController,
-                                  validator: (value) {
-                                    if (value == null || value.isEmpty) {
-                                      return "Please Enter Username";
-                                    }
-                                    return null;
-                                  },
-                                  decoration: InputDecoration(
-                                    border: InputBorder.none,
-                                    hintText: "Username",
-                                    hintStyle: AppWidget.lightTextStyle(),
+                                Container(
+                                  padding:
+                                      const EdgeInsets.only(left: 20, top: 5.0),
+                                  margin: const EdgeInsets.symmetric(
+                                      horizontal: 20.0),
+                                  decoration: BoxDecoration(
+                                    border: Border.all(
+                                      color: const Color.fromARGB(
+                                          255, 160, 160, 147),
+                                    ),
+                                    borderRadius: BorderRadius.circular(10),
                                   ),
-                                ),
-                              ),
-                            ),
-                            const SizedBox(
-                              height: 40.0,
-                            ),
-                            Container(
-                              padding:
-                                  const EdgeInsets.only(left: 20, top: 5.0),
-                              margin:
-                                  const EdgeInsets.symmetric(horizontal: 20.0),
-                              decoration: BoxDecoration(
-                                border: Border.all(
-                                  color:
-                                      const Color.fromARGB(255, 160, 160, 147),
-                                ),
-                                borderRadius: BorderRadius.circular(10),
-                              ),
-                              child: Center(
-                                child: TextFormField(
-                                  obscureText: true,
-                                  controller: passwordController,
-                                  validator: (value) {
-                                    if (value == null || value.isEmpty) {
-                                      return "Please Enter Password";
-                                    }
-                                    return null;
-                                  },
-                                  decoration: InputDecoration(
-                                    border: InputBorder.none,
-                                    hintText: "Password",
-                                    hintStyle: AppWidget.lightTextStyle(),
-                                  ),
-                                ),
-                              ),
-                            ),
-                            const SizedBox(
-                              height: 40.0,
-                            ),
-                            GestureDetector(
-                              onTap: () {
-                                LoginAdmin();
-                              },
-                              child: Container(
-                                padding:
-                                    const EdgeInsets.symmetric(vertical: 10),
-                                width: 150,
-                                decoration: const BoxDecoration(
-                                  color: Color.fromARGB(255, 255, 94, 49),
-                                  borderRadius: BorderRadius.all(
-                                    Radius.circular(
-                                      10,
+                                  child: Center(
+                                    child: TextFormField(
+                                      controller: userNameController,
+                                      validator: (value) {
+                                        if (value == null || value.isEmpty) {
+                                          return "Please Enter Username";
+                                        }
+                                        return null;
+                                      },
+                                      decoration: InputDecoration(
+                                        border: InputBorder.none,
+                                        hintText: "Username",
+                                        hintStyle: AppWidget.lightTextStyle(),
+                                      ),
                                     ),
                                   ),
                                 ),
-                                child: Center(
-                                  child: Text(
-                                    "Log In",
-                                    style: AppWidget.buttonTextStyle(),
+                                const SizedBox(
+                                  height: 40.0,
+                                ),
+                                Container(
+                                  padding:
+                                      const EdgeInsets.only(left: 20, top: 5.0),
+                                  margin: const EdgeInsets.symmetric(
+                                      horizontal: 20.0),
+                                  decoration: BoxDecoration(
+                                    border: Border.all(
+                                      color: const Color.fromARGB(
+                                          255, 160, 160, 147),
+                                    ),
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                  child: Center(
+                                    child: TextFormField(
+                                      obscureText: true,
+                                      controller: passwordController,
+                                      validator: (value) {
+                                        if (value == null || value.isEmpty) {
+                                          return "Please Enter Password";
+                                        }
+                                        return null;
+                                      },
+                                      decoration: InputDecoration(
+                                        border: InputBorder.none,
+                                        hintText: "Password",
+                                        hintStyle: AppWidget.lightTextStyle(),
+                                      ),
+                                    ),
                                   ),
                                 ),
-                              ),
+                                const SizedBox(
+                                  height: 40.0,
+                                ),
+                                GestureDetector(
+                                  onTap: () {
+                                    LoginAdmin();
+                                  },
+                                  child: Container(
+                                    padding: const EdgeInsets.symmetric(
+                                        vertical: 10),
+                                    width: 150,
+                                    decoration: const BoxDecoration(
+                                      color: Color.fromARGB(255, 255, 94, 49),
+                                      borderRadius: BorderRadius.all(
+                                        Radius.circular(
+                                          10,
+                                        ),
+                                      ),
+                                    ),
+                                    child: Center(
+                                      child: Text(
+                                        "Log In",
+                                        style: AppWidget.buttonTextStyle(),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
                             ),
-                          ],
-                        ),
-                      ),
-                    )
-                  ],
-                ),
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                ],
               ),
             )
           ],
