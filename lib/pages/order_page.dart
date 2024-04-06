@@ -149,7 +149,7 @@ class _OrderPageState extends State<OrderPage> {
                     style: AppWidget.boldTextStyle(),
                   ),
                   Text(
-                    "222 ",
+                    "Price ",
                     style: AppWidget.boldTextStyle(),
                   ),
                 ],

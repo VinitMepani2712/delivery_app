@@ -81,7 +81,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   height: MediaQuery.of(context).size.height / 4.3,
                   width: MediaQuery.of(context).size.width,
                   decoration: BoxDecoration(
-                      color: Colors.black,
+                      color: Color(0xFFff5c30),
                       borderRadius: BorderRadius.vertical(
                         bottom: Radius.elliptical(
                             MediaQuery.of(context).size.width, 105.0),
@@ -104,7 +104,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                 },
                                 child: profile == null
                                     ? Image.asset(
-                                        "images/food.jpg",
+                                        "images/Vinit.JPG",
                                         height: 120,
                                         width: 120,
                                       )
@@ -287,13 +287,37 @@ class _ProfilePageState extends State<ProfilePage> {
             ),
             GestureDetector(
               onTap: () {
-                AuthMethods().deleteuser();
-
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => OnBoardPage(),
-                  ),
+                showDialog(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return AlertDialog(
+                      title: Text("Confirm Deletion"),
+                      content: Text("Are you sure you want to say bye?"),
+                      actions: [
+                        TextButton(
+                          onPressed: () {
+                            // Cancel deletion
+                            Navigator.pop(context); // Close the dialog
+                          },
+                          child: Text("Cancel"),
+                        ),
+                        TextButton(
+                          onPressed: () {
+                            // Perform deletion here
+                            AuthMethods()
+                                .deleteuser(); // Assuming this method deletes the user
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => OnBoardPage(),
+                              ),
+                            );
+                          },
+                          child: Text("Yes"),
+                        ),
+                      ],
+                    );
+                  },
                 );
               },
               child: Container(

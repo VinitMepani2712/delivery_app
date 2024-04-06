@@ -179,35 +179,32 @@ class _LoginPageState extends State<LoginPage> {
                                   userLogin();
                                 }
                               },
-                              child: Material(
-                                elevation: 5,
-                                child: Container(
-                                  padding:
-                                      const EdgeInsets.symmetric(vertical: 10),
-                                  width: 150,
-                                  decoration: const BoxDecoration(
-                                    color: Color(0xFFff5c30),
-                                    borderRadius: BorderRadius.all(
-                                      Radius.circular(
-                                        10,
-                                      ),
+                              child: Container(
+                                padding:
+                                    const EdgeInsets.symmetric(vertical: 10),
+                                width: 150,
+                                decoration: const BoxDecoration(
+                                  color: Color(0xFFff5c30),
+                                  borderRadius: BorderRadius.all(
+                                    Radius.circular(
+                                      10,
                                     ),
                                   ),
-                                  child: Center(
-                                    child: GestureDetector(
-                                      onTap: () {
-                                        Navigator.pushReplacement(
-                                          context,
-                                          MaterialPageRoute(
-                                            builder: (context) =>
-                                                const BottemNavigationBar(),
-                                          ),
-                                        );
-                                      },
-                                      child: Text(
-                                        "LOGIN",
-                                        style: AppWidget.buttonTextStyle(),
-                                      ),
+                                ),
+                                child: Center(
+                                  child: GestureDetector(
+                                    onTap: () {
+                                      Navigator.pushReplacement(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) =>
+                                              const BottemNavigationBar(),
+                                        ),
+                                      );
+                                    },
+                                    child: Text(
+                                      "LOGIN",
+                                      style: AppWidget.buttonTextStyle(),
                                     ),
                                   ),
                                 ),

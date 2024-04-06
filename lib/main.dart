@@ -1,4 +1,6 @@
 import 'package:delivery_app/firebase_options.dart';
+import 'package:delivery_app/pages/forgot_password.dart';
+import 'package:delivery_app/pages/home_page.dart';
 import 'package:delivery_app/pages/signup.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -16,9 +18,9 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SignUpPage(),
+      home: ForgotPasswordPage(),
     );
   }
 }
